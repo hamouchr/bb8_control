@@ -6,8 +6,6 @@
 #include <tf/tf.h>
 #include <tf2/LinearMath/Quaternion.h>
 
-using namespace geometry_msgs;
-
 // LES NAMESPACES
 using namespace ros;
 using namespace std_msgs;
@@ -36,9 +34,7 @@ int main(int argc, char **argv) {
   return 0;
 }
 
-// FONCTION DE CONVERSION QUATERNION => ANGLE D'EULER RPY [ RAW (ROTATION X),
-//                                     PITCH (ROTATION Y), YAW (ROTATION Z) ]
-
+// FONCTION DE CONVERSION QUATERNION => ANGLE D'EULER YAW (ROTATION Z)
 float quaternionToAngleEuler(Quaternion angle_quaternion) {
 
 float angle_Euler = tf::getYaw(angle_quaternion);
