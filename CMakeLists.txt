@@ -29,3 +29,4 @@ target_link_libraries(localisation ${catkin_LIBRARIES})
 add_executable(obstacles_detecteur src/obstacles_detecteur.cpp)    
 target_link_libraries(obstacles_detecteur ${catkin_LIBRARIES}) 
 
+# Ver R20.22
