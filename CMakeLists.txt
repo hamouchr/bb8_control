@@ -25,7 +25,7 @@ target_link_libraries(controleur ${catkin_LIBRARIES})
  
 add_executable(localisation src/localisation.cpp)    
 target_link_libraries(localisation ${catkin_LIBRARIES}) 
-# 20.22
+
 add_executable(obstacles_detecteur src/obstacles_detecteur.cpp)    
 target_link_libraries(obstacles_detecteur ${catkin_LIBRARIES}) 
 
