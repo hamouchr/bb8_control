@@ -1,4 +1,4 @@
-// LES FICHIERS EN-TETES
+//-- LES FICHIERS EN-TETES
 #include <csignal>
 #include <math.h>
 #include <ros/ros.h>
@@ -9,10 +9,11 @@ using namespace ros;
 using namespace std_msgs;
 
 // LES CONSTANTES
+#define MAX_UINT 65535
 #define MODE_CIRCULAIRE 1
 #define MODE_RECTANGULAIRE 2
-#define LINEAR_SPEED 0.8
-#define ANGULAR_SPEED 0.8
+#define LINEAR_SPEED 0.6
+#define ANGULAR_SPEED 0.6
 #define FREQ_CONTROL 10 // hz
 
 // LES VARIABLES GLOBALES
@@ -44,14 +45,17 @@ void drive(float lin_vel, float ang_vel) {
 
 }
 
-void mouvement_rectangulaire() {
+void mouvement_rectangulaire(unsigned int iteration) {
 
 }
 
-void mouvement_circulaire() {
+void mouvement_circulaire(unsigned int iteration) {
 	
 }
 
+void mouvement_avancer_reculer(unsigned int iteration) {
+	
+}
 
 // MAIN DE L'APPLICATION
 int main(int argc, char **argv) {
@@ -64,12 +68,15 @@ int main(int argc, char **argv) {
 
 
   Rate loop_rate(FREQ_CONTROL);
+  unsigned int iteration = 1;
+
   while (ok()) {
 
 
 
 
-
+    iteration = (iteration + 1) % MAX_UINT;
+    ROS_INFO("iteration %d", iteration);
     spinOnce();
     loop_rate.sleep();
   }
