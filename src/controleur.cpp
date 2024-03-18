@@ -1,4 +1,4 @@
-//-- LES FICHIERS EN-TETES
+//--- LES FICHIERS EN-TETES ----
 #include <csignal>
 #include <math.h>
 #include <ros/ros.h>
@@ -45,15 +45,15 @@ void drive(float lin_vel, float ang_vel) {
 
 }
 
-void mouvement_rectangulaire(unsigned int iteration) {
+void mouvement_rectangulaire() {
 
 }
 
-void mouvement_circulaire(unsigned int iteration) {
+void mouvement_circulaire() {
 	
 }
 
-void mouvement_avancer_reculer(unsigned int iteration) {
+void mouvement_avancer_reculer() {
 	
 }
 
@@ -68,17 +68,13 @@ int main(int argc, char **argv) {
 
 
   Rate loop_rate(FREQ_CONTROL);
-  unsigned int iteration = 1;
 
   while (ok()) {
+	loop_rate.sleep();
 
 
 
-
-    iteration = (iteration + 1) % MAX_UINT;
-    ROS_INFO("iteration %d", iteration);
     spinOnce();
-    loop_rate.sleep();
   }
 
   return 0;
@@ -86,7 +82,7 @@ int main(int argc, char **argv) {
 
 void sigintHandler(int sig) {
   // Log quit
-  ROS_INFO("Exiting program gracefully ...");
+  ROS_INFO("Exiting program gracefully ....");
   stop();
   // Kill all open subscriptions, publications, service calls, and service
   // servers
