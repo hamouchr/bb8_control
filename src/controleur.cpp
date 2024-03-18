@@ -66,7 +66,8 @@ int main(int argc, char **argv) {
 
 
 
-
+  
+  Duration(1).sleep();
   Rate loop_rate(FREQ_CONTROL);
 
   while (ok()) {
