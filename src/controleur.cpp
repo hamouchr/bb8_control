@@ -10,6 +10,7 @@
 // LES NAMESPACES
 using namespace ros;
 using namespace std_msgs;
+using namespace geometry_msgs;
 
 // LES CONSTANTES
 #define MAX_UINT 65535
