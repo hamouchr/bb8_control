@@ -3,6 +3,9 @@
 #include <math.h>
 #include <ros/ros.h>
 #include <std_msgs/String.h>
+#include <string>
+#include <tf/tf.h>
+#include <tf2/LinearMath/Quaternion.h>
 
 // LES NAMESPACES
 using namespace ros;
@@ -22,6 +25,7 @@ int mode;
 
 // LES PROTOTYPES DE FONCTIONS
 void sigintHandler(int sig);
+float quaternionToAngleEuler(Quaternion q_angle);
 
 
 // LES FONCTIONS ET LES CALLBACKS
@@ -88,4 +92,13 @@ void sigintHandler(int sig) {
   // Kill all open subscriptions, publications, service calls, and service
   // servers
   shutdown();
+}
+
+// FONCTION DE CONVERSION QUATERNION => ANGLE D'EULER YAW (ROTATION Z)
+float quaternionToAngleEuler(Quaternion angle_quaternion) {
+
+float angle_Euler = tf::getYaw(angle_quaternion);
+  
+return angle_Euler;
+
 }

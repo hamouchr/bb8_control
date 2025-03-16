@@ -24,8 +24,8 @@ include_directories(
 add_executable(controleur src/controleur.cpp)
 target_link_libraries(controleur ${catkin_LIBRARIES}) 
  
-add_executable(localisation src/localisation.cpp)    
-target_link_libraries(localisation ${catkin_LIBRARIES}) 
+#add_executable(localisation src/localisation.cpp)    
+#target_link_libraries(localisation ${catkin_LIBRARIES}) 
 
 add_executable(obstacles_detecteur src/obstacles_detecteur.cpp)    
 target_link_libraries(obstacles_detecteur ${catkin_LIBRARIES}) 
